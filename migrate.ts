@@ -4,10 +4,11 @@ import pg from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
 import axios from 'axios';
 import * as dotenv from 'dotenv';
+import config from './src/config/index.js';
 
 dotenv.config();
 
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+const pool = new pg.Pool({ connectionString: config.database_url });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
