@@ -3,6 +3,7 @@ import type { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 import config from './config/index.js';
+import foodRoutes from './modules/foods/foods.routes.js'
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ const app = express();
 // --- Middleware ---
 app.use(cors()); // Allows your frontend to talk to this API
 app.use(express.json()); // Parses incoming JSON
+app.use('/api/meals', foodRoutes);
 
 
 // --- Health Check ---
