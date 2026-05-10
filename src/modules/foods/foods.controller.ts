@@ -9,7 +9,7 @@ export const getFoods = async (req: Request, res: Response) => {
     if(!parsedCategory.success) {
         return res.status(400).json({ 
                 success: false, 
-                error: JSON.parse(parsedCategory.error)[0].message
+                error: parsedCategory.error.issues[0].message
         });
     } 
     const resultCategory = parsedCategory.data;
