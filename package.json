@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node api.js && tsx --watch src/index.ts",
+    "dev": "tsx --watch src/index.ts",
     "lint": "eslint src",
-    "build": "node api.js && tsc --noEmit",
+    "build": "tsc --noEmit",
     "prepare": "husky"
   },
   "keywords": [],
